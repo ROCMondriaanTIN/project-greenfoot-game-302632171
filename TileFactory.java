@@ -97,8 +97,8 @@ public class TileFactory {
                 tile.isSolid = true;
                 break;    
              case 197:
-                tile = new Tile("spikes.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-                tile.isSolid = true;
+                tile = new SpikeTile("spikes.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile.isSolid = false;
                 break;    
              case 195:
                 tile = new Tile("gemBlue.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
