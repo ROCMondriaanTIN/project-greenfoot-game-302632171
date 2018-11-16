@@ -16,7 +16,7 @@ public class TileFactory {
         switch (mapIcon) {
 
             case 172:
-                tile = new Tile("keyYellow.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile = new Sleutel("keyYellow.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;
             case 61:
                 tile = new Tile("door_openTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -81,7 +81,7 @@ public class TileFactory {
                 tile.isSolid = true;
                 break;    
             case 10:
-                tile = new Tile("boxItem.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile = new Coinbox("boxItem.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 tile.isSolid = true;
                 break;    
             case 6:
@@ -101,10 +101,10 @@ public class TileFactory {
                 tile.isSolid = false;
                 break;    
              case 195:
-                tile = new Tile("gemBlue.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile = new Diamant("gemBlue.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;    
              case 194:
-                tile = new Tile("coinSilver.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile = new Silvercoin("coinSilver.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;    
              case 189:
                 tile = new Goldcoin("coinGold.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -113,7 +113,7 @@ public class TileFactory {
                 tile = new Tile("ropeAttached.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;    
              case 104:
-                tile = new Tile("ropeVertical.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile = new Rope("ropeVertical.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;  
            
                 

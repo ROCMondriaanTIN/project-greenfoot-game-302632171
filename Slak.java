@@ -17,7 +17,7 @@ public class Slak extends Mover {
         super();
         setImage("snailWalk1.png");
         getImage().mirrorHorizontally();
-        walkRange = 160;
+        walkRange = 260;
         firstAct = true;
         speed = 1;
     }

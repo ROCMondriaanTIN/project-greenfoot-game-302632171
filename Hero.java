@@ -64,17 +64,51 @@ public class Hero extends Mover {
                 return;
             }
         }
+        
+        for (Actor enemy : getIntersectingObjects(Door.class)) {
+            if (enemy != null) {
+            setLocation ( 100, 2555 );
+                return;
+            }
+        }
+        
+        for (Actor enemy : getIntersectingObjects(Door1.class)) {
+            if (enemy != null) {
+            setLocation ( 3400, 3395 );
+                return;
+            }
+        }
+        
+        for (Actor enemy : getIntersectingObjects(Door2.class)) {
+            if (enemy != null) {
+            setLocation ( 100 , 1645 );
+                return;
+            }
+        }
+        
+        for (Actor enemy : getIntersectingObjects(Door3.class)) {
+            if (enemy != null) {
+            setLocation ( 3400 , 2555 );
+                return;
+            }
+        }
+        
+        // for (Actor enemy : getIntersectingObjects(Coinbox.class)) {
+        //   if (enemy != null) {
+        //       getWorld().removeObject(this);//return;
+        //}
+        //}
     }
 
     public void handleInput() {
-        if (Greenfoot.isKeyDown("w")&& velocityY == 0) {
-    velocityY = -10;
+        if (Greenfoot.isKeyDown("w")) {
+         velocityY = -10;
         }
 
         if (Greenfoot.isKeyDown("a")) {
-            velocityX = -10;
+            velocityX = -5;
         } else if (Greenfoot.isKeyDown("d")) {
-            velocityX = 10;
+            velocityX = 7;
         }
     }
 
