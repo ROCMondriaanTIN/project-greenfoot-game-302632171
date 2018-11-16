@@ -59,7 +59,7 @@ public class TileFactory {
                 tile = new Tile("liquidLavaTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break; 
             case 90:
-                tile = new Tile("liquidLava.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile = new LavaTile1("liquidLava.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break; 
             case 16:
                 tile = new Tile("bridge.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -70,7 +70,7 @@ public class TileFactory {
                 tile.isSolid = true;
                 break;    
             case 92:
-                tile = new Tile("liquidLavaTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile = new LavaTile("liquidLavaTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;    
             case 77:
                 tile = new Tile("grassHillRight.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -107,7 +107,7 @@ public class TileFactory {
                 tile = new Tile("coinSilver.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;    
              case 189:
-                tile = new Tile("coinGold.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile = new Goldcoin("coinGold.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;    
              case 102:
                 tile = new Tile("ropeAttached.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);

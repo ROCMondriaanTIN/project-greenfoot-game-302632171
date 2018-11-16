@@ -37,8 +37,29 @@ public class Hero extends Mover {
             }
         }
         
-        for (Actor tile : getIntersectingObjects(SpikeTile.class)) {
-            if (tile != null) {
+        for (Actor enemy : getIntersectingObjects(Slak.class)) {
+            if (enemy != null) {
+                getWorld().removeObject(this);
+                return;
+            }
+        }
+        
+        for (Actor enemy : getIntersectingObjects(SpikeTile.class)) {
+            if (enemy != null) {
+                getWorld().removeObject(this);
+                return;
+            }
+        }
+        
+        for (Actor enemy : getIntersectingObjects(LavaTile.class)) {
+            if (enemy != null) {
+                getWorld().removeObject(this);
+                return;
+            }
+        }
+        
+        for (Actor enemy : getIntersectingObjects(LavaTile1.class)) {
+            if (enemy != null) {
                 getWorld().removeObject(this);
                 return;
             }
@@ -47,7 +68,7 @@ public class Hero extends Mover {
 
     public void handleInput() {
         if (Greenfoot.isKeyDown("w")&& velocityY == 0) {
-        velocityY = -10;
+    velocityY = -10;
         }
 
         if (Greenfoot.isKeyDown("a")) {
@@ -65,3 +86,6 @@ public class Hero extends Mover {
         return getImage().getHeight();
     }
 }
+
+
+  
