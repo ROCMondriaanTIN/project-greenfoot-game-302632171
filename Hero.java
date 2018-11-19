@@ -18,6 +18,13 @@ public class Hero extends Mover {
         drag = 0.8;
         setImage("p1.png");
     }
+    
+    public boolean onGround()
+    {
+        Actor under = getOneObjectAtOffset (0, getHeight ()/2,Tile.class);
+        Tile tile = (Tile) under;
+        return tile != null && tile.isSolid == true;
+    }
 
     @Override
     public void act() {
@@ -32,35 +39,35 @@ public class Hero extends Mover {
 
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             if (enemy != null) {
-                getWorld().removeObject(this);
+                setLocation ( 35, 3395 );
                 return;
             }
         }
         
         for (Actor enemy : getIntersectingObjects(Slak.class)) {
             if (enemy != null) {
-                getWorld().removeObject(this);
+                setLocation ( 35, 3395 );
                 return;
             }
         }
         
         for (Actor enemy : getIntersectingObjects(SpikeTile.class)) {
             if (enemy != null) {
-                getWorld().removeObject(this);
+                setLocation ( 35, 3395 );
                 return;
             }
         }
         
         for (Actor enemy : getIntersectingObjects(LavaTile.class)) {
             if (enemy != null) {
-                getWorld().removeObject(this);
+                setLocation ( 35, 3395 );
                 return;
             }
         }
         
         for (Actor enemy : getIntersectingObjects(LavaTile1.class)) {
             if (enemy != null) {
-                getWorld().removeObject(this);
+                setLocation ( 35, 3395 );
                 return;
             }
         }
@@ -101,25 +108,32 @@ public class Hero extends Mover {
     }
 
     public void handleInput() {
-        if (Greenfoot.isKeyDown("up") && velocityY == 0) {
+        if ((Greenfoot.isKeyDown("up") && onGround() == true ) ||(Greenfoot.isKeyDown("up") && isTouching(Rope.class))){
          velocityY = -10;
         }
-
-        if (Greenfoot.isKeyDown("left")) {
-            velocityX = -5;
-        } else if (Greenfoot.isKeyDown("right")) {
-            velocityX = 7;
+       if (Greenfoot.isKeyDown("down") )  {
+            velocityY = 5;
         }
-    }
 
-    public int getWidth() {
+        if (Greenfoot.isKeyDown("left")) 
+            velocityX = -5;
+        
+       else if (Greenfoot.isKeyDown("right")) {
+            velocityX = 7;
+        } 
+    }
+     public int getWidth() {
         return getImage().getWidth();
     }
 
     public int getHeight() {
         return getImage().getHeight();
     }
-}
+
+    
+    }
+
+   
 
 
   
