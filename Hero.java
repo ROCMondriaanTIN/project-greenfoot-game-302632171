@@ -99,7 +99,13 @@ public class Hero extends Mover {
                 return;
             }
         }
-        
+
+                for (Actor enemy : getIntersectingObjects(NextDoor.class)) {
+            if (enemy != null) {
+            Greenfoot.setWorld(new MyWorld2());
+                return;
+            }
+        }
         // for (Actor enemy : getIntersectingObjects(Coinbox.class)) {
         //   if (enemy != null) {
         //       getWorld().removeObject(this);//return;
