@@ -2,121 +2,140 @@
 import greenfoot.*;
 
 /**
- *
- * @author R. Springer
- */
+*
+* @author R. Springer
+*/
 public class Hero extends Mover {
 
-    private final double gravity;
-    private final double acc;
-    private final double drag;
+private final double gravity;
+private final double acc;
+private final double drag;
+int x = 35;
+int y = 3395;
 
-    public Hero() {
-        super();
-        gravity = 9.8;
-        acc = 0.6;
-        drag = 0.8;
-        setImage("p1.png");
+public Hero() {
+    super();
+    gravity = 9.8;
+    acc = 0.6;
+    drag = 0.8;
+    setImage("p1.png");
+}
+
+public boolean onGround()
+{
+    Actor under = getOneObjectAtOffset (0, getHeight ()/2,Tile.class);
+    Tile tile = (Tile) under;
+    return tile != null && tile.isSolid == true;
+}
+
+
+
+@Override
+public void act() {
+    handleInput();
+    
+    velocityX *= drag;
+    velocityY += acc;
+    if (velocityY > gravity) {
+        velocityY = gravity;
+    }
+    {
+    if (isTouching(Checkpoint1.class))
+    {
+        x=getX();
+        y=getY();
+    }
+}
+applyVelocity();
+
+
+    
+    for (Actor enemy : getIntersectingObjects(Slak.class)) {
+        if (enemy != null) {
+            setLocation ( x, y );
+            return;
+        }
     }
     
-    public boolean onGround()
-    {
-        Actor under = getOneObjectAtOffset (0, getHeight ()/2,Tile.class);
-        Tile tile = (Tile) under;
-        return tile != null && tile.isSolid == true;
+    for (Actor enemy : getIntersectingObjects(SpikeTile.class)) {
+        if (enemy != null) {
+            setLocation ( x, y );
+            return;
+        }
+    }
+    
+    for (Actor enemy : getIntersectingObjects(LavaTile.class)) {
+        if (enemy != null) {
+            setLocation ( x, y );
+            return;
+        }
+    }
+    
+    for (Actor enemy : getIntersectingObjects(LavaTile1.class)) {
+        if (enemy != null) {
+            setLocation ( x, y );
+            return;
+        }
+    }
+    
+    for (Actor enemy : getIntersectingObjects(Door.class)) {
+        if (enemy != null) {
+        setLocation ( 100, 2555 );
+            return;
+        }
+    }
+    
+    for (Actor enemy : getIntersectingObjects(Door1.class)) {
+        if (enemy != null) {
+        setLocation ( 3400, 3395 );
+            return;
+        }
+    }
+    
+    for (Actor enemy : getIntersectingObjects(Door2.class)) {
+        if (enemy != null) {
+        setLocation ( 100 , 1645 );
+            return;
+        }
+    }
+    
+    for (Actor enemy : getIntersectingObjects(Door3.class)) {
+        if (enemy != null) {
+        setLocation ( 3400 , 2555 );
+            return;
+        }
+    }
+    for (Actor enemy : getIntersectingObjects(Door4.class)) {
+        if (enemy != null) {
+        setLocation ( 155, 2050 );
+            return;
+        }
+    }
+    for (Actor enemy : getIntersectingObjects(Door5.class)) {
+        if (enemy != null) {
+        setLocation ( 3315, 3115 );
+            return;
+        }
     }
 
-    @Override
-    public void act() {
-        handleInput();
-        
-        velocityX *= drag;
-        velocityY += acc;
-        if (velocityY > gravity) {
-            velocityY = gravity;
+            for (Actor enemy : getIntersectingObjects(NextDoor.class)) {
+        if (enemy != null) {
+        Greenfoot.setWorld(new MyWorld2());
+            return;
         }
-    applyVelocity();
-
-        for (Actor enemy : getIntersectingObjects(Enemy.class)) {
-            if (enemy != null) {
-                setLocation ( 35, 3395 );
-                return;
-            }
-        }
-        
-        for (Actor enemy : getIntersectingObjects(Slak.class)) {
-            if (enemy != null) {
-                setLocation ( 35, 3395 );
-                return;
-            }
-        }
-        
-        for (Actor enemy : getIntersectingObjects(SpikeTile.class)) {
-            if (enemy != null) {
-                setLocation ( 35, 3395 );
-                return;
-            }
-        }
-        
-        for (Actor enemy : getIntersectingObjects(LavaTile.class)) {
-            if (enemy != null) {
-                setLocation ( 35, 3395 );
-                return;
-            }
-        }
-        
-        for (Actor enemy : getIntersectingObjects(LavaTile1.class)) {
-            if (enemy != null) {
-                setLocation ( 35, 3395 );
-                return;
-            }
-        }
-        
-        for (Actor enemy : getIntersectingObjects(Door.class)) {
-            if (enemy != null) {
-            setLocation ( 100, 2555 );
-                return;
-            }
-        }
-        
-        for (Actor enemy : getIntersectingObjects(Door1.class)) {
-            if (enemy != null) {
-            setLocation ( 3400, 3395 );
-                return;
-            }
-        }
-        
-        for (Actor enemy : getIntersectingObjects(Door2.class)) {
-            if (enemy != null) {
-            setLocation ( 100 , 1645 );
-                return;
-            }
-        }
-        
-        for (Actor enemy : getIntersectingObjects(Door3.class)) {
-            if (enemy != null) {
-            setLocation ( 3400 , 2555 );
-                return;
-            }
-        }
-
-                for (Actor enemy : getIntersectingObjects(NextDoor.class)) {
-            if (enemy != null) {
-            Greenfoot.setWorld(new MyWorld2());
-                return;
-            }
-        }
-        // for (Actor enemy : getIntersectingObjects(Coinbox.class)) {
-        //   if (enemy != null) {
-        //       getWorld().removeObject(this);//return;
-        //}
-        //}
     }
+    // for (Actor enemy : getIntersectingObjects(Coinbox.class)) {
+    //   if (enemy != null) {
+    //       getWorld().removeObject(this);//return;
+    //}
+    //}
+}
 
-    public void handleInput() {
-        if ((Greenfoot.isKeyDown("up") && onGround() == true ) ||(Greenfoot.isKeyDown("up") && isTouching(Rope.class))){
-         velocityY = -10;
+public void handleInput() {
+    if ((Greenfoot.isKeyDown("up") && onGround() == true ) ||(Greenfoot.isKeyDown("up") && isTouching(Rope.class))){
+ velocityY = -10;
         }
+        
        if (Greenfoot.isKeyDown("down") )  {
             velocityY = 5;
         }
@@ -135,9 +154,36 @@ public class Hero extends Mover {
     public int getHeight() {
         return getImage().getHeight();
     }
-
     
+    public void Checkpoint1()
+    {
+        setLocation(155, 2555);
     }
+     
+    public void SpikeTile()
+    {
+        if(isTouching(SpikeTile.class))
+        {
+            Checkpoint1();
+        }
+    }
+    
+       public void LavaTile()
+    {
+        if(isTouching(LavaTile.class))
+        {
+            Checkpoint1();
+        }
+    }
+        public void LavaTile1()
+    {
+        if(isTouching(LavaTile1.class))
+        {
+            Checkpoint1();
+        }
+    }
+    
+}
 
    
 

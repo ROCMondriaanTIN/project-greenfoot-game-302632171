@@ -88,8 +88,8 @@ public class MyWorld extends World {
 
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
-        addObject(hero, 36, 3388);
-        addObject(new Enemy(), 1170, 410);
+        addObject(hero, 36, 3388);       //  Spawn plek
+        // addObject(hero, 3365 , 1645);       // Rechts boven laatste deur
         addObject(new Slak(), 2900, 3414);
         addObject(new Slak(), 2830, 3414);
         addObject(new Slak(), 2760, 3414);
@@ -98,6 +98,7 @@ public class MyWorld extends World {
         addObject(new Door2(), 3465 , 2555);
         addObject(new Door3(), 35 , 1645);
         addObject(new NextDoor(),3465 , 1645);
+        addObject(new Checkpoint1(),155, 2555);
         
         camera.act();
         hero.act();
