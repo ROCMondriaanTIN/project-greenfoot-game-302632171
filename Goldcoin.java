@@ -14,6 +14,7 @@ public class Goldcoin extends Tile
     public Goldcoin(String image, int width, int heigth) {
         super(image,width, heigth);
     }
+    
   
 }  
 

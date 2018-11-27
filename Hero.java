@@ -10,8 +10,10 @@ public class Hero extends Mover {
 private final double gravity;
 private final double acc;
 private final double drag;
-int x = 35;
-int y = 3395;
+int x = 125;
+int y = 3185;
+//int x = 35;
+//int y = 3395;
 
 public Hero() {
     super();
@@ -118,18 +120,32 @@ applyVelocity();
         }
     }
 
-            for (Actor enemy : getIntersectingObjects(NextDoor.class)) {
+    for (Actor enemy : getIntersectingObjects(NextDoor.class)) {
         if (enemy != null) {
         Greenfoot.setWorld(new MyWorld2());
             return;
         }
     }
+    for (Actor enemy : getIntersectingObjects(NextDoor2.class)) {
+        if (enemy != null) {
+        Greenfoot.setWorld(new MyWorld3());
+            return;
+        }
+    }
+    
+}
+   /*  public boolean collectCoin()
+    {
+        Actor coinTouched= getOneIntersectingObject(Coin.class);
+        return coinTouched!=null;
+        */
+    
     // for (Actor enemy : getIntersectingObjects(Coinbox.class)) {
     //   if (enemy != null) {
     //       getWorld().removeObject(this);//return;
     //}
     //}
-}
+
 
 public void handleInput() {
     if ((Greenfoot.isKeyDown("up") && onGround() == true ) ||(Greenfoot.isKeyDown("up") && isTouching(Rope.class))){
@@ -141,12 +157,13 @@ public void handleInput() {
         }
 
         if (Greenfoot.isKeyDown("left")) 
-            velocityX = -5;
+            velocityX = -7;
         
        else if (Greenfoot.isKeyDown("right")) {
             velocityX = 7;
-        } 
+        }
     }
+
      public int getWidth() {
         return getImage().getWidth();
     }
