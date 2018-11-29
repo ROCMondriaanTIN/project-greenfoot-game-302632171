@@ -16,147 +16,147 @@ int y = 3185;
 //int y = 3395;
 
 public Hero() {
-    super();
-    gravity = 9.8;
-    acc = 0.6;
-    drag = 0.8;
-    setImage("p1.png");
+super();
+gravity = 9.8;
+acc = 0.6;
+drag = 0.8;
+setImage("p1.png");
 }
 
 public boolean onGround()
 {
-    Actor under = getOneObjectAtOffset (0, getHeight ()/2,Tile.class);
-    Tile tile = (Tile) under;
-    return tile != null && tile.isSolid == true;
+Actor under = getOneObjectAtOffset (0, getHeight ()/2,Tile.class);
+Tile tile = (Tile) under;
+return tile != null && tile.isSolid == true;
 }
 
 
 
 @Override
 public void act() {
-    handleInput();
-    
-    velocityX *= drag;
-    velocityY += acc;
-    if (velocityY > gravity) {
-        velocityY = gravity;
-    }
-    {
-    if (isTouching(Checkpoint1.class))
-    {
-        x=getX();
-        y=getY();
-    }
+handleInput();
+
+velocityX *= drag;
+velocityY += acc;
+if (velocityY > gravity) {
+    velocityY = gravity;
+}
+{
+if (isTouching(Checkpoint1.class))
+{
+    x=getX();
+    y=getY();
+}
 }
 applyVelocity();
 
 
-    
-    for (Actor enemy : getIntersectingObjects(Slak.class)) {
-        if (enemy != null) {
-            setLocation ( x, y );
-            return;
-        }
-    }
-    
-    for (Actor enemy : getIntersectingObjects(SpikeTile.class)) {
-        if (enemy != null) {
-            setLocation ( x, y );
-            return;
-        }
-    }
-    
-    for (Actor enemy : getIntersectingObjects(LavaTile.class)) {
-        if (enemy != null) {
-            setLocation ( x, y );
-            return;
-        }
-    }
-    
-    for (Actor enemy : getIntersectingObjects(LavaTile1.class)) {
-        if (enemy != null) {
-            setLocation ( x, y );
-            return;
-        }
-    }
-    
-    for (Actor enemy : getIntersectingObjects(Door.class)) {
-        if (enemy != null) {
-        setLocation ( 100, 2555 );
-            return;
-        }
-    }
-    
-    for (Actor enemy : getIntersectingObjects(Door1.class)) {
-        if (enemy != null) {
-        setLocation ( 3400, 3395 );
-            return;
-        }
-    }
-    
-    for (Actor enemy : getIntersectingObjects(Door2.class)) {
-        if (enemy != null) {
-        setLocation ( 100 , 1645 );
-            return;
-        }
-    }
-    
-    for (Actor enemy : getIntersectingObjects(Door3.class)) {
-        if (enemy != null) {
-        setLocation ( 3400 , 2555 );
-            return;
-        }
-    }
-    for (Actor enemy : getIntersectingObjects(Door4.class)) {
-        if (enemy != null) {
-        setLocation ( 155, 2050 );
-            return;
-        }
-    }
-    for (Actor enemy : getIntersectingObjects(Door5.class)) {
-        if (enemy != null) {
-        setLocation ( 3315, 3115 );
-            return;
-        }
-    }
 
-    for (Actor enemy : getIntersectingObjects(NextDoor.class)) {
-        if (enemy != null) {
-        Greenfoot.setWorld(new MyWorld2());
-            return;
-        }
+for (Actor enemy : getIntersectingObjects(Slak.class)) {
+    if (enemy != null) {
+        setLocation ( x, y );
+        return;
     }
-    for (Actor enemy : getIntersectingObjects(NextDoor2.class)) {
-        if (enemy != null) {
-        Greenfoot.setWorld(new MyWorld3());
-            return;
-        }
-    }
-    
 }
-   /*  public boolean collectCoin()
-    {
-        Actor coinTouched= getOneIntersectingObject(Coin.class);
-        return coinTouched!=null;
-        */
-    
-    // for (Actor enemy : getIntersectingObjects(Coinbox.class)) {
-    //   if (enemy != null) {
-    //       getWorld().removeObject(this);//return;
-    //}
-    //}
+
+for (Actor enemy : getIntersectingObjects(SpikeTile.class)) {
+    if (enemy != null) {
+        setLocation ( x, y );
+        return;
+    }
+}
+
+for (Actor enemy : getIntersectingObjects(LavaTile.class)) {
+    if (enemy != null) {
+        setLocation ( x, y );
+        return;
+    }
+}
+
+for (Actor enemy : getIntersectingObjects(LavaTile1.class)) {
+    if (enemy != null) {
+        setLocation ( x, y );
+        return;
+    }
+}
+
+for (Actor enemy : getIntersectingObjects(Door.class)) {
+    if (enemy != null) {
+    setLocation ( 100, 2555 );
+        return;
+    }
+}
+
+for (Actor enemy : getIntersectingObjects(Door1.class)) {
+    if (enemy != null) {
+    setLocation ( 3400, 3395 );
+        return;
+    }
+}
+
+for (Actor enemy : getIntersectingObjects(Door2.class)) {
+    if (enemy != null) {
+    setLocation ( 100 , 1645 );
+        return;
+    }
+}
+
+for (Actor enemy : getIntersectingObjects(Door3.class)) {
+    if (enemy != null) {
+    setLocation ( 3400 , 2555 );
+        return;
+    }
+}
+for (Actor enemy : getIntersectingObjects(Door4.class)) {
+    if (enemy != null) {
+    setLocation ( 155, 2050 );
+        return;
+    }
+}
+for (Actor enemy : getIntersectingObjects(Door5.class)) {
+    if (enemy != null) {
+    setLocation ( 3315, 3115 );
+        return;
+    }
+}
+
+for (Actor enemy : getIntersectingObjects(NextDoor.class)) {
+    if (enemy != null) {
+    Greenfoot.setWorld(new MyWorld2());
+        return;
+    }
+}
+for (Actor enemy : getIntersectingObjects(NextDoor2.class)) {
+    if (enemy != null) {
+    Greenfoot.setWorld(new MyWorld3());
+        return;
+    }
+}
+
+}
+/*  public boolean collectCoin()
+{
+    Actor coinTouched= getOneIntersectingObject(Coin.class);
+    return coinTouched!=null;
+    */
+
+// for (Actor enemy : getIntersectingObjects(Coinbox.class)) {
+//   if (enemy != null) {
+//       getWorld().removeObject(this);//return;
+//}
+//}
 
 
 public void handleInput() {
-    if ((Greenfoot.isKeyDown("up") && onGround() == true ) ||(Greenfoot.isKeyDown("up") && isTouching(Rope.class))){
- velocityY = -10;
-        }
-        
-       if (Greenfoot.isKeyDown("down") )  {
-            velocityY = 5;
-        }
+if ((Greenfoot.isKeyDown("up") && onGround() == true ) ||(Greenfoot.isKeyDown("up") && isTouching(Rope.class))){
+    velocityY = -10;
+    }
+    
+   if (Greenfoot.isKeyDown("down") )  {
+        velocityY = 5;
+    }
 
-        if (Greenfoot.isKeyDown("left")) 
+if (Greenfoot.isKeyDown("left")) 
             velocityX = -7;
         
        else if (Greenfoot.isKeyDown("right")) {

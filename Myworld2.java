@@ -1,6 +1,5 @@
-
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.awt.Color;
 /**
  *
  * @author R. Springer
@@ -15,6 +14,25 @@ public class MyWorld2 extends World {
      * Constructor for objects of class MyWorld2.
      *
      */
+
+/*public class Text extends Actor
+{
+    public Text()
+    {
+        this("");
+    }
+ 
+    public Text(String text)
+    {
+        setText(text);
+    }
+ 
+    public void setText(String text)
+    {
+        setImage(new GreenfootImage(text, 24, Color.black, new Color(0, 0, 0, 0)));
+    } 
+} */
+    //private int Timer;
     public MyWorld2() {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false);
@@ -79,6 +97,8 @@ public class MyWorld2 extends World {
 
 
         };
+        
+        
 
     // Declareren en initialiseren van de TileEngine klasse om de map aan de world toe te voegen
         TileEngine te = new TileEngine(this, 70, 70, map);
@@ -127,4 +147,14 @@ public class MyWorld2 extends World {
     public void act() {
         ce.update();
     }
+   /* {
+        if (Timer>18000)
+    Timer--;
+    if(Timer == 18000) Greenfoot.stop();
+} */
 }
+
+
+    
+
+
