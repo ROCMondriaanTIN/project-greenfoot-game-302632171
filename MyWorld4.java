@@ -100,9 +100,9 @@ public class MyWorld4 extends World {
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
        
-        //addObject(hero, 135, 3000);       //  Spawn plek
+        addObject(hero, 135, 3000);       //  Spawn plek
         //addObject(hero, 3300, 3000);    // rechts onder
-        addObject(hero, 3295, 1350);
+       
 
         /*  
         addObject(new Enemy(), 1170, 410);

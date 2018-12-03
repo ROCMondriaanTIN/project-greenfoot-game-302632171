@@ -87,8 +87,8 @@ public class MyWorld extends World {
 
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
-        //addObject(hero, 36, 3388);       //  Spawn plek
-        addObject(hero, 3365 , 1645);       // Rechts boven laatste deur
+        addObject(hero, 36, 3388);       //  Spawn plek
+        //addObject(hero, 3365 , 1645);       // Rechts boven laatste deur
         addObject(new Slak(), 2900, 3414);
         addObject(new Slak(), 2830, 3414);
         addObject(new Slak(), 2760, 3414);

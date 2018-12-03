@@ -98,8 +98,8 @@ public class MyWorld3 extends World {
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
        
-        //addObject(hero, 115, 3200);       //  Spawn plek
-        addObject(hero, 2800, 200);
+        addObject(hero, 115, 3200);       //  Spawn plek
+        //addObject(hero, 2800, 200);
         addObject(new NextDoor3(),2695 , 175);
         /*  
         addObject(new Enemy(), 1170, 410);
