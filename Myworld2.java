@@ -15,24 +15,7 @@ public class MyWorld2 extends World {
      *
      */
 
-/*public class Text extends Actor
-{
-    public Text()
-    {
-        this("");
-    }
- 
-    public Text(String text)
-    {
-        setText(text);
-    }
- 
-    public void setText(String text)
-    {
-        setImage(new GreenfootImage(text, 24, Color.black, new Color(0, 0, 0, 0)));
-    } 
-} */
-    //private int Timer;
+
     public MyWorld2() {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false);
@@ -115,8 +98,8 @@ public class MyWorld2 extends World {
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
         //addObject(hero, 155, 2000);  // links boven spawn plek
-        addObject(hero, 245, 3000);    // Start plek
-        //addObject(hero, 3295, 200); // rechts boven
+        //addObject(hero, 245, 3000);    // Start plek
+        addObject(hero, 3295, 200); // rechts boven
         addObject(new Door4(), 3395, 3115);  // deur rechts onder naar links boven
         addObject(new Door5(), 35, 2065);
         addObject(new NextDoor2(),3395 , 315);

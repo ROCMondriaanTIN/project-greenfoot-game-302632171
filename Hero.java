@@ -119,6 +119,30 @@ for (Actor enemy : getIntersectingObjects(Door5.class)) {
         return;
     }
 }
+for (Actor enemy : getIntersectingObjects(Door6.class)) {
+    if (enemy != null) {
+    setLocation ( 135,2500 );
+        return;
+    }
+}
+for (Actor enemy : getIntersectingObjects(Door7.class)) {
+    if (enemy != null) {
+    setLocation ( 135,2000 );
+        return;
+    }
+}
+for (Actor enemy : getIntersectingObjects(Door8.class)) {
+    if (enemy != null) {
+    setLocation ( 135,1250 );
+        return;
+    }
+}
+for (Actor enemy : getIntersectingObjects(Door9.class)) {
+    if (enemy != null) {
+    setLocation ( 135,550 );
+        return;
+    }
+}
 
 for (Actor enemy : getIntersectingObjects(NextDoor.class)) {
     if (enemy != null) {
@@ -129,6 +153,12 @@ for (Actor enemy : getIntersectingObjects(NextDoor.class)) {
 for (Actor enemy : getIntersectingObjects(NextDoor2.class)) {
     if (enemy != null) {
     Greenfoot.setWorld(new MyWorld3());
+        return;
+    }
+}
+for (Actor enemy : getIntersectingObjects(NextDoor3.class)) {
+    if (enemy != null) {
+    Greenfoot.setWorld(new MyWorld4());
         return;
     }
 }
