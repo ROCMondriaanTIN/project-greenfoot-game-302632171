@@ -100,13 +100,23 @@ public class MyWorld4 extends World {
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
        
-        addObject(hero, 135, 3000);       //  Spawn plek
-        //addObject(hero, 3300, 3000);    // rechts onder
-       
+       addObject(hero, 135, 3000);       //  Spawn plek
+       //addObject(hero, 3300, 3000);    // rechts onder
+       //addObject(hero, 135, 1980);
+        addObject(new Slak(), 735,2645);
+        addObject(new Slak(), 1235,2645);
+        addObject(new Slak(), 1735,2645);
+        addObject(new Slak(), 2235,2645);
+        addObject(new Slak(), 705,2015);
+        addObject(new Slak(), 1175,2015);
+        addObject(new Slak(), 1600,2015);
+        addObject(new Slak(), 2020,2015);
+        addObject(new Slak(), 2440,2015);
+        addObject(new Slak(), 2860,2015);
 
         /*  
         addObject(new Enemy(), 1170, 410);
-        addObject(new Slak(), 2900, 3414);
+        addObject(new Slak(), 535,2500);
         addObject(new Slak(), 2830, 3414);
         addObject(new Slak(), 2760, 3414);
         */
